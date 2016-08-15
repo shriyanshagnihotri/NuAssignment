@@ -1,0 +1,13 @@
+package udpConversation;
+
+message Request {
+  required string id = 1;
+  required string cmd = 2;
+  required string data = 3;
+}
+
+message Response {
+  required string id = 1;
+  required string result = 2;
+  required string data = 3;
+}

@@ -1,0 +1,52 @@
+package movieData;
+
+enum Month {
+  JAN = 0;
+  FEB = 1;
+  MAR = 2;
+  APR = 3;
+  MAY = 4;
+  JUN = 5;
+  JUL = 6;
+  AUG = 7;
+  SEP = 8;
+  OCT = 9;
+  NOV = 10;
+  DEC = 11;
+}
+
+message Date {
+  required int32 day = 1;
+  required Month month = 2;
+  required int32 year = 3;
+}
+
+enum Genre {
+    adventure = 0;
+    scifi = 1;
+    drama = 2;
+    comedy = 3;
+    animation = 4;
+    horror = 5;
+}
+
+message Review {
+  required string username = 1;
+  optional int32 rating = 2 [default = 3];
+  required Date date = 3;
+  optional string comment = 4;
+}
+
+message Movie {
+  required string name = 1;
+  optional Date dor = 2;
+  repeated Genre genre = 3;
+  optional int32 duration = 4;
+  repeated string actors = 5;
+  repeated string directors = 6;
+  repeated Review reviews = 7;
+}
+
+message IMDB {
+  repeated Movie movies = 1;
+}
